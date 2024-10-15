@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const url = 'https://back-end-pokemonbattle.onrender.com/';
+const url = 'https://ecommers-back-end.onrender.com/api';
 const local = 'http://localhost:3000/api';
 
 export const ApiEcommers = axios.create({
-    baseURL: local,  // Cambia a `url` si prefieres usar la URL del deploy.
+    baseURL: url,  // Cambia a `url` si prefieres usar la URL del deploy.
 });
 
 // Método para obtener todos los productos
@@ -12,7 +12,8 @@ ApiEcommers.getAllProducts = () => {
     return ApiEcommers.get('/products');
 };
 
-// Método para obtener un producto
+// Método para obtener un pro
+ducto
 ApiEcommers.getProduct = (idProduct) => {
     return ApiEcommers.get(`/products/${idProduct}`,
     );
