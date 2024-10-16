@@ -12,6 +12,13 @@ La aplicación permite:
 - **Buscar Productos**: Se puede buscar Productos por nombre para encontrarlos fácilmente.
 - **Ver Información**: Los usuarios pueden ver información detallada sobre cada Producto.
 
+Para loggearse como admin y realizar las operaciones CRUD este es el usuario:
+
+# Mail:
+prueba@gmail.com
+# Contraseña:
+hola123
+
 # Deploy:
 https://ecommers-front-end.vercel.app/
 
