@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { ApiEcommers } from '@/api/ApiECommers';
 import ProductCard from '@/components/ProductCards/productCards';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleSearchVisibility } from '@/redux/Search/searchSlice';
+import { clearSearch, setSearchTerm, toggleSearchVisibility } from '@/redux/Search/searchSlice';
 import { useRouter } from 'next/navigation';
 import ProductCreateOrEditModal from '@/components/ModalCreate/ModalCreate';
 
@@ -35,11 +35,16 @@ export default function HomeAdmin() {
 
             return () => {
                 dispatch(toggleSearchVisibility()); // Ejecutar el dispatch al desmontarse
+                dispatch(clearSearch());
+
             };
         } else {
             router.push('/Home');
         }
     }, [dispatch, isAuthenticated, router]);
+
+
+
 
     useEffect(() => {
         if (reload) {
@@ -73,9 +78,22 @@ export default function HomeAdmin() {
         }
     };
 
+    const setSearchTerms = (e) => {
+        dispatch(setSearchTerm(e.target.value));
+    };
+
     return (
         <div className="p-4">
             <h1 className="text-3xl font-bold mb-8">Panel de Administrador</h1>
+            <div className="items-center flex pb-3 sm:hidden">
+                <input
+                    value={searchTerm}
+                    type="text"
+                    onChange={setSearchTerms}
+                    placeholder="Buscar productos..."
+                    className="p-2 rounded-lg px-3 bg-gray-200 text-black w-full outline-none"
+                />
+            </div>
             <div className='flex w-full justify-between items-center md:pr-28 mb-5'>
                 <h2 className="text-2xl font-bold ">Productos activos</h2>
                 <button

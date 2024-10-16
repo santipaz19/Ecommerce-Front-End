@@ -1,7 +1,7 @@
 'use client';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from '@/components/ProductCards/productCards';
-import { toggleSearchVisibility } from '@/redux/Search/searchSlice';
+import { clearSearch, toggleSearchVisibility } from '@/redux/Search/searchSlice';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -16,6 +16,7 @@ export default function Carrito() {
         dispatch(toggleSearchVisibility());
         return () => {
             dispatch(toggleSearchVisibility()); // Ejecutar el dispatch al desmontarse
+            dispatch(clearSearch());
         };
     }, [dispatch]);
 

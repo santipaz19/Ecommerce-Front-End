@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { ApiEcommers } from '@/api/ApiECommers';
 import ProductCard from '@/components/ProductCards/productCards';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSearchTerm, toggleSearchVisibility } from '@/redux/Search/searchSlice';
+import { clearSearch, setSearchTerm, toggleSearchVisibility } from '@/redux/Search/searchSlice';
 
 export default function Home() {
     const [products, setProducts] = useState([]);
@@ -26,6 +26,7 @@ export default function Home() {
 
         return () => {
             dispatch(toggleSearchVisibility()); // Ejecutar el dispatch al desmontarse
+            dispatch(clearSearch());
         };
     }, [dispatch]);
 
