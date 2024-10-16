@@ -53,12 +53,7 @@ export default function Home() {
 
 
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-6">
-        <div className="container mx-auto px-6 text-center">
-          <p>© 2024 Mi tienda. Todos los derechos reservados.</p>
-        </div>
-      </footer>
+
     </div>
   );
 }

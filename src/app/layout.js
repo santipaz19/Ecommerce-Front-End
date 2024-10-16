@@ -22,18 +22,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    // <Provider store={store}> 
     <html lang="en">
       <head>
         <link rel="icon" href="/assets/imagelogo.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
 
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
+
+        {/* Footer */}
+        <footer className="bg-gray-800 w-full text-white py-3">
+          <div className="container mx-auto px-6 text-center">
+            <p>© 2024 Mi tienda. Todos los derechos reservados.</p>
+          </div>
+        </footer>
       </body>
     </html>
-    // </Provider>
   );
 }
