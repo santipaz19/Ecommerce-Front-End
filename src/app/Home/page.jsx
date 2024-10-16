@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { ApiEcommers } from '@/api/ApiECommers';
 import ProductCard from '@/components/ProductCards/productCards';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleSearchVisibility } from '@/redux/Search/searchSlice';
+import { setSearchTerm, toggleSearchVisibility } from '@/redux/Search/searchSlice';
 
 export default function Home() {
     const [products, setProducts] = useState([]);
     const searchTerm = useSelector((state) => state.search.searchTerm); // Obtener searchTerm desde Redux
+
 
     const dispatch = useDispatch()
 
@@ -34,9 +35,24 @@ export default function Home() {
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+
+    const setSearchTerms = (e) => {
+        dispatch(setSearchTerm(e.target.value));
+    };
+
+
     return (
         <div className="p-4">
             <h1 className="text-3xl font-bold mb-8">Lista de Productos</h1>
+            <div className="items-center flex sm:hidden">
+                <input
+                    value={searchTerm}
+                    type="text"
+                    onChange={setSearchTerms}
+                    placeholder="Buscar productos..."
+                    className="p-2 rounded-lg px-3 bg-gray-200 text-black w-full outline-none"
+                />
+            </div>
             <div className="flex flex-wrap justify-center md:justify-start gap-6">
                 {filteredProducts?.map((product) => (
                     <ProductCard key={product.id} product={product} />

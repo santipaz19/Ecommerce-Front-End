@@ -13,12 +13,12 @@ export default function Home() {
       {/* Header Section */}
       <header className="bg-white shadow">
         <div className="container mx-auto px-6 py-4">
-          <h1 className="text-4xl font-bold text-blue-600">Mi tienda</h1>
+          <h1 className="text-4xl font-bold text-gray-800">Mi tienda</h1>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-blue-600 text-white">
+      <section className="bg-gray-800 text-white">
         <div className="container mx-auto px-6 py-12 text-center">
           <h2 className="text-5xl font-bold mb-4">Bienvenido a el challenge tecnico</h2>
           <p className="text-lg mb-8">
@@ -26,7 +26,7 @@ export default function Home() {
           </p>
           <button
             onClick={handleIngresar}
-            className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition"
+            className="bg-white text-gray-800 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition"
           >
             Ingresar
           </button>

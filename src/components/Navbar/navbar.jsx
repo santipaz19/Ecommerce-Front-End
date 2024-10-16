@@ -15,6 +15,7 @@ const Navbar = () => {
     const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
     const searchTerm = useSelector((state) => state.search.searchTerm);
     const visible = useSelector((state) => state.search.visible);
+    const carrito = useSelector((state) => state.cart.items);
 
     const handleLoginClick = () => {
         // Si está autenticado, hacer logout
@@ -38,13 +39,13 @@ const Navbar = () => {
 
     return (
         <nav className="bg-gray-800 text-white p-4">
-            <div className="max-w-screen mx-6 flex items-center justify-between">
+            <div className="max-w-screen mx-2 md:mx-6 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center cursor-pointer" onClick={() => router.push("/Home")}>
                     <img
                         src="/assets/imagelogo.png"
                         alt="Logo"
-                        className="h-14 mr-4"
+                        className="sm:h-14 hidden sm:flex mr-4"
                     />
                     <h1 className="text-xl font-semibold">Mi Tienda</h1>
                 </div>
@@ -57,17 +58,21 @@ const Navbar = () => {
                             type="text"
                             onChange={setSearchTerms}
                             placeholder="Buscar productos..."
-                            className="p-2 rounded-lg pl-10 text-black w-[10rem] md:w-[20rem] outline-none"
+                            className="p-2 rounded-lg bg-gray-200 px-2 text-black w-[10rem] md:w-[20rem] outline-none"
                         />
                     </div>
                 )}
 
                 {/* Carrito de compras y Login/Logout */}
                 <div className="flex items-center space-x-4">
-                    <div className="flex items-center gap-2">
-                        carrito
+                    <div className="flex items-center gap-1 cursor-pointer" onClick={() => router.push("/Home/Cart")}>
+                        <img
+                            src="/assets/carrito2.png"
+                            alt="carrito"
+                            className="h-7 "
+                        />
                         <span className="bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                            3
+                            {carrito.length}
                         </span>
                     </div>
 
