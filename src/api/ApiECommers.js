@@ -12,8 +12,7 @@ ApiEcommers.getAllProducts = () => {
     return ApiEcommers.get('/products');
 };
 
-// Método para obtener un pro
-ducto
+// Método para obtener un producto
 ApiEcommers.getProduct = (idProduct) => {
     return ApiEcommers.get(`/products/${idProduct}`,
     );
