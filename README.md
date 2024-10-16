@@ -14,9 +14,9 @@ La aplicación permite:
 
 Para loggearse como admin y realizar las operaciones CRUD este es el usuario:
 
-# Mail:
+**Mail**:
 prueba@gmail.com
-# Contraseña:
+**Contraseña**:
 hola123
 
 # Deploy:
