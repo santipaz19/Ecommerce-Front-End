@@ -2,6 +2,11 @@
 
 Este proyecto es la interfaz de usuario para la aplicación Mi tienda E-Commerce. A continuación, se detallan las instrucciones para configurar y ejecutar el proyecto localmente.
 
+
+## Tecnologias 
+
+Utilicé Next.js como framework para la creación de la aplicación, Tailwind CSS para los estilos, permitiendo un diseño responsive e intuitivo, y Redux para gestionar los estados globales, facilitando la comunicación entre los componentes.
+
 ## Descripción de la Aplicación
 
 La aplicación permite:
