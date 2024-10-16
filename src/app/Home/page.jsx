@@ -44,7 +44,7 @@ export default function Home() {
     return (
         <div className="p-4">
             <h1 className="text-3xl font-bold mb-8">Lista de Productos</h1>
-            <div className="items-center flex sm:hidden">
+            <div className="items-center flex pb-3 sm:hidden">
                 <input
                     value={searchTerm}
                     type="text"
