@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Commerce Frontend
 
-## Getting Started
+Este proyecto es la interfaz de usuario para la aplicación Mi tienda E-Commerce. A continuación, se detallan las instrucciones para configurar y ejecutar el proyecto localmente.
 
-First, run the development server:
 
-```bash
+## Tecnologias 
+
+Utilicé Next.js como framework para la creación de la aplicación, Tailwind CSS para los estilos, permitiendo un diseño responsive e intuitivo, y Redux para gestionar los estados globales, facilitando la comunicación entre los componentes.
+
+## Descripción de la Aplicación
+
+La aplicación permite:
+
+- **Mostrar productos**: Los usuarios pueden visualizar los diferentes productos de la tienda.
+- **Gestionar productos**: El usuario admin puede editar, crear o eliminar productos.
+- **Carrito**: Los usuarios tienen la opción de ir agregando productos al carrito y luego visualizar un total mostrando todos sus productos y ademas tambien eliminar o agregar otros.
+- **Buscar Productos**: Se puede buscar Productos por nombre para encontrarlos fácilmente.
+- **Ver Información**: Los usuarios pueden ver información detallada sobre cada Producto.
+
+Para loggearse como admin y realizar las operaciones CRUD este es el usuario:
+
+**Mail**:
+prueba@gmail.com
+**Contraseña**:
+hola123
+
+# Deploy:
+https://ecommers-front-end.vercel.app/
+
+En caso de utilizar el deploy esperar unos minutos a que se levante el servidor debido a que esta alojado en render y en el plan gratis al estar inactivo se apaga.
+
+## Instalación
+
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone https://github.com/santipaz19/Ecommerce-Front-End.git
+2. **Instalar dependencias: Usando npm:**
+
+   npm install
+
+## Ejecucion
+
+Para iniciar el proyecto en modo desarrollo:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El proyecto se ejecutará en http://localhost:3000.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Estructura del Proyecto
+src/: Contiene el código fuente del proyecto.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+src/api/: Módulos para interactuar con las API.
 
-## Learn More
+src/components/: Componentes de React modularizados.
 
-To learn more about Next.js, take a look at the following resources:
+src/redux/:  Modulos para gestionar el estado global de la aplicacion.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+src/app/:  Carpeta principal que ensambla y renderiza los componentes.
